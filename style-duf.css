@@ -11,7 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -48,8 +48,18 @@ nav ul li a {
     text-decoration: none;
 }
 
+/* Estilo para el enlace activo */
+nav ul li a.active {
+    color: var(--color-secundario); /* Amarillo */
+    font-weight: bold; /* Opción para que se vea más destacado */
+}
+
+.nosotros {
+    text-align: center;
+}
+
 .hero {
-    background: url('img/banner.png') repeat center/cover;
+    background: url('img/pngtree-argentine-folklore-concept-mate-and-guitar-on-a-black-background-photo-photo-image_32189280.jpg') repeat center/cover;
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -151,6 +161,7 @@ footer {
 
 footer .social-icons a {
     margin: 0 10px;
+    color: white;
 }
 
 footer .social-icons img {
@@ -199,7 +210,7 @@ footer .social-icons img {
 
 .category .more-link {
     font-size: 1rem;
-    color: #004d00;
+    color: var(--color-primario);
     text-decoration: none;
     position: absolute;
     right: 0;
@@ -211,52 +222,6 @@ footer .social-icons img {
 }
 
 /* Estilos generales del grid de productos */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.product-item {
-    background-color: #fff;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.product-item:hover {
-    transform: scale(1.05);
-}
-
-.product-item img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.product-item h4 {
-    margin: 10px 0;
-    font-size: 1.2rem;
-}
-
-.product-item p {
-    font-size: 1rem;
-}
-
-.product-item button {
-    padding: 8px 16px;
-    background-color: #004d00;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.product-item button:hover {
-    background-color: #003300;
-}
 .grilla {
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -268,9 +233,146 @@ footer .social-icons img {
 .grilla-item {
     background-color: aquamarine;
 }
+
 .uno {
-grid-row: span 2;
+    grid-row: span 2;
 }
-@media(max-widh: 768px) {
-    grid-template-columns repeat 2, 1fr;
+
+@media (max-width: 768px) {
+    .grilla {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+
+/* Estilos para el título del formulario */
+.contacto {
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar el formulario */
+    padding: 20px; /* Espaciado interno */
+    background-color: #f9f9f9; /* Color de fondo */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.contacto h2 {
+    text-align: center; /* Centrar el título */
+    color: #333; /* Color del texto */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Espaciado entre grupos de formulario */
+}
+
+label {
+    display: block; /* Asegura que las etiquetas ocupen toda la línea */
+    margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+    font-weight: bold; /* Negrita */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: border-color 0.3s; /* Transición al enfocar */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #004d00; /* Cambiar color del borde al enfocar */
+    outline: none; /* Sin contorno */
+}
+
+.submit-button {
+    background-color: #004d00; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s; /* Transición suave */
+    width: 100%; /* Botón ocupa todo el ancho */
+}
+
+.submit-button:hover {
+    background-color: #005700; /* Cambia el color al pasar el ratón */
+}
+
+/* Sección de reseñas */
+.resenas {
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.resenas h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Configuración de la cuadrícula */
+.resenas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Estilo de cada tarjeta de reseña */
+.resena-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.resena-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.resena-item h4 {
+    font-size: 1rem;
+    color: #004d00;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Sección del pueblo turístico */
+.puebloturistico {
+    text-align: left;
+    margin: auto;
+
+}
+
+/* Estilos para la sección de imagen y mapa */
+.puebloimagen {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.imagenguarda {
+    background-image: url('img/guardapampa.webp');
+    background-repeat: repeat; /* Repite la imagen */
+    }
+
+#gif-promocional h2 {
+        text-align: center;
+        margin-bottom: 20px; /* Ajusta el espacio debajo del título */
+        font-size: 24px; /* Ajusta el tamaño de la fuente según sea necesario */
+        color: #333; /* Cambia el color del texto según tu preferencia */
+    }
+    
+    
+/* Fin del CSS */
