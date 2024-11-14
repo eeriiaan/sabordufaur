@@ -58,16 +58,20 @@ nav ul li a.active {
     text-align: center;
 }
 
+
 .hero {
-    background: url('img/pngtree-argentine-folklore-concept-mate-and-guitar-on-a-black-background-photo-photo-image_32189280.jpg') repeat center/cover;
-    height: 400px;
+    background: url('imagenes/pngtree-argentine-folklore-concept-mate-and-guitar-on-a-black-background-photo-photo-image_32189280.jpg') no-repeat center center/cover;
+    height: 30em; /* Ajusta la altura del contenedor en unidades em */
+    min-height: 15em; /* Establece una altura mínima en em para que no quede demasiado pequeño */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+    padding: 2em; /* Ajuste de padding en em */
 }
+
 
 .hero h2 {
     font-size: 3rem;
@@ -222,21 +226,73 @@ footer .social-icons img {
 }
 
 /* Estilos generales del grid de productos */
-.grilla {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+.categorymates {
     text-align: center;
+    margin: 20px auto;
 }
 
-.grilla-item {
-    background-color: aquamarine;
+.categorymates h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-.uno {
-    grid-row: span 2;
+.product-grid {
+    display: flex;
+    gap: 20px; /* Espacio entre productos */
+    justify-content: center; /* Centrar productos */
+    flex-wrap: wrap;
 }
+
+.product-item {
+    flex: 1 1 200px; /* Tamaño fijo para cada tarjeta */
+    max-width: 200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.product-item h4 {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+.product-item p {
+    font-size: 1.1em;
+    color: #888;
+}
+
+.product-item button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.product-item button:hover {
+    background-color: #45a049;
+}
+
 
 @media (max-width: 768px) {
     .grilla {
@@ -349,30 +405,96 @@ textarea:focus {
 
 /* Sección del pueblo turístico */
 .puebloturistico {
-    text-align: left;
-    margin: auto;
-
+    max-width: 800px;
+    margin: 40px auto; /* Más margen para separación del fondo */
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco para destacar como tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más fuerte para efecto flotante */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efecto hover */
 }
+
+.puebloturistico:hover {
+    transform: translateY(-10px); /* Efecto de elevación en hover */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3); /* Sombra más fuerte al hacer hover */
+}
+
+.puebloturistico h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.puebloturistico p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+}
+
 
 /* Estilos para la sección de imagen y mapa */
 .puebloimagen {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio entre los cuadros, si lo deseas */
 }
 
+.card {
+    flex: 1 1 25%; /* Cada tarjeta ocupará un cuarto del ancho */
+    box-sizing: border-box;
+}
+
+.card img,
+.card iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
 .imagenguarda {
-    background-image: url('img/guardapampa.webp');
+    background-image: url('imagenes/guardapampa.webp');
     background-repeat: repeat; /* Repite la imagen */
     }
 
-#gif-promocional h2 {
+    #gif-promocional {
         text-align: center;
-        margin-bottom: 20px; /* Ajusta el espacio debajo del título */
-        font-size: 24px; /* Ajusta el tamaño de la fuente según sea necesario */
-        color: #333; /* Cambia el color del texto según tu preferencia */
+        padding: 20px;
     }
     
+    #gif-promocional img {
+        width: 100%;
+        max-width: 600px; /* Limita el tamaño máximo del GIF */
+        height: auto; /* Mantiene la proporción del GIF */
+        border-radius: 8px; /* Bordes redondeados opcionales */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+    }
     
+   .contacto-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contacto-imagen {
+    flex: 1;
+}
+
+.contacto-imagen img {
+    width: 100%;
+    height: auto;
+
+}
+
+.contacto-formulario {
+    flex: 1;
+}
+
+.contacto h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+ 
 /* Fin del CSS */
